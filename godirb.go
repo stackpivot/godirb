@@ -5,6 +5,7 @@ import (
    "net/http"
    // "net/url"
    "fmt"
+   "flag"
    // "os"
    // "strconv"
 )
@@ -69,13 +70,38 @@ func getRobots(url string) []string {
       }
 
 
-
-
    }
 
 
 }
 
 func generate_target_urls(target string){
+
+}
+
+
+
+
+func main() {
+
+   wordlist_p := flag.String("wordlist", "None", "wordlist to bruteforce URLs")
+   targetlist_p := flag.String("targetlist", "None", "target list with IPs and URLs to target")
+
+   flag.Parse()
+   tail := flag.Args()
+
+   if wordlist_p == "None" {
+      // TODO add error handling
+      fmt.Println("\033[31m%s \033[0m\n", "wordlist file not found" )
+   } else if targetlist_p == "None" {
+      // TODO add error handling
+      fmt.Println("\033[31m%s \033[0m\n", "targetlist file not found" )
+   }
+
+
+
+
+
+   if flag
 
 }
